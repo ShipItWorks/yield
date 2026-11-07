@@ -2,7 +2,7 @@
 
 A helper that does tasks, asks before saving anything, and never overspends your cap.
 
-**Score: 76 / 100** on the [ShipItWorks rubric](https://shipitworks.com/how-we-score/). Stage: Beta. As of 2026-11-02, from the [product page](https://shipitworks.com/yield/).
+**Score: 76 / 100** on the [ShipItWorks rubric](https://shipitworks.com/how-we-score/). Stage: Beta. As of 2026-11-07, from the [product page](https://shipitworks.com/yield/).
 
 Every number on the product page names the file it came from. The lists below are copied from that page, not rewritten.
 
@@ -11,23 +11,30 @@ Every number on the product page names the file it came from. The lists below ar
 ## What works today
 
 - Approval bound to exact bytes, hard + soft spend cap, tamper-evident record
+- Connect a real AI with encrypted key: Anthropic re-run by the reviewer; OpenAI, OpenRouter, HF, Ollama and xAI recorded by the builder
 - MCP server (tools by key type, start task, approval refused)
 - Results page (cost, hours freed from user-entered baselines, CSV)
 - Helpers per AI: state (working/waiting/stalled/idle), job props, 4 monitor scenes (code, bird, space, maze)
 - Click-to-choose a helper + 5-second 'on stage' preview
 - Done celebration
+- Results by P&L line, with a worked calculation for every money number (Lane 1b)
 
 ## Not done yet
 
-- No real-AI proof: all 32 jobs only ever ran against the practice helper
+- Real runs for five of the six services were recorded by the builder, not independently verified; the sixth (Anthropic) was re-run on 2026-11-03 by the Claude session that reviewed this project, approved by a person in the app, final status done, cost $0.003969.
 - The stage walkthrough was filmed with the states held in turn by the demo harness, not during one live run; no playable game
 - Shipped .deb (0.4.5) is older than the code (0.5.0), unsigned, with a placeholder maintainer; 0.5.0 never installed by the owner
 - native/ is a stub; no independent security audit has passed
-- Playwright suite was not re-run on 2026-11-01 (the recorded pass is from 2026-10-30)
+- xAI us-central-1 is priced about 10 percent above the table; the on-screen workings use today's price, not the price at the time of the step (proof/proof-pack.json:401)
+- gitleaks flags a fake key joined from parts in e2e/d1-adversarial.spec.ts:14 (a false positive); the allowlist is not yet extended (proof/proof-pack.json:61)
+- Commits 48be421 and 3547323 (thinking off for Haiku 5.x, cut-off flag, fence stripping) postdate the independent audit and are covered by tests only. Opus and Fable were not tested against the thinking change; Sonnet 5.5 rejects thinking:disabled (HTTP 400), which is why it is sent to Haiku 5.x only.
+- A task refused by the hard cap shows 'price not known' and is counted as an unpriced step on Results, although no call was made (seen on camera 2026-11-03). The wording is wrong; not fixed.
+- The before/after ROI runs (videos/yield/roi/RESULTS.md) stop at the approval step: no manual-vs-agent comparison exists and approval time was not measured. One Sonnet reply in 18 after-fix runs still reached its 1,024-token limit (flagged on the approval).
+- The v5 video (published 2026-11-05) shows one journey: a real run on Claude, the Needs-you approval clicked by the recording script (captioned on screen; not evidence of a person approving) and the spending cap. It does not show every page; the full-product video (v6, BACKLOG.md item 2) is not recorded yet.
 
 ## Demo
 
-[Demo video (2:40) on the product page](https://shipitworks.com/yield/) · [Transcript](https://shipitworks.com/yield/transcript/)
+[Demo video (3:13) on the product page](https://shipitworks.com/yield/) · [Transcript](https://shipitworks.com/yield/transcript/)
 
 The demo voice is AI-generated (ElevenLabs, "Alice") and the demo shows made-up data. The video says so at the end.
 
