@@ -2,6 +2,12 @@
 
 Public record of changes to yield, written from the product page on shipitworks.com. The source is private. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Release tags exist on the private repository's default branch.
 
+## 2026-11-10 (release v0.5.0)
+
+- 2026-11-10: Land PR #132 merged into main as ebc7730 (67 lane PRs included); no feature label changed this round. Tagged v0.5.0 at ebc7730.
+
+Score 70 / 100 on our own rubric, scored 2026-11-10. Product page: https://shipitworks.com/yield/
+
 ## 2026-11-08 (release v0.4.0)
 
 - 2026-11-08: Re-scored 70/100 on our own rubric (was 76 on the old held rule). The 25 feature points are split over 13 features: one proven by a logged test run (the cut-off warning, PR #9, checked with a stand-in AI, not a real AI answer), ten built and tested with sample data, two not built or not tested yet. Tagged v0.4.0 at main dfaae6c.
