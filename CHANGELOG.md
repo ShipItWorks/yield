@@ -2,6 +2,12 @@
 
 Public record of changes to yield, written from the product page on shipitworks.com. The source is private. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Release tags exist on the private repository's default branch.
 
+## 2026-11-18 (release v0.6.0)
+
+
+
+Score 70 / 100 on our own rubric, scored 2026-11-12. Product page: https://shipitworks.com/yield/
+
 ## 2026-11-10 (release v0.5.0)
 
 - 2026-11-10: Land PR #132 merged into main as ebc7730 (67 lane PRs included); no feature label changed this round. Tagged v0.5.0 at ebc7730.

@@ -1,8 +1,8 @@
 # Yield
 
-A helper that does tasks, asks before saving anything, and stops at the spending cap you set.
+An agent orchestration platform: its agents do tasks, ask before saving anything, and are designed to stop at the spending cap you set.
 
-**Score: 70 / 100** on our own [rubric](https://shipitworks.com/how-we-score/). Stage: Beta. Scored 2026-11-10; this record was updated 2026-11-10 from the [product page](https://shipitworks.com/yield/).
+**Score: 70 / 100** on our own [rubric](https://shipitworks.com/how-we-score/). Stage: Beta. Scored 2026-11-12; this record was updated 2026-11-18 from the [product page](https://shipitworks.com/yield/).
 
 Every number on the product page names the file it came from. The lists below are copied from that page, not rewritten.
 
@@ -11,12 +11,12 @@ Every number on the product page names the file it came from. The lists below ar
 ## What works today
 
 - Approval bound to exact bytes, hard + soft spend cap, tamper-evident record (Tested with sample data)
-- 32 jobs in six kinds, practice helper (mock) only (Tested with sample data)
+- 32 jobs in six kinds, stand-in AI (mock) only (Tested with sample data)
 - Connect a real AI with encrypted key: Anthropic re-run by the reviewer; OpenAI, OpenRouter, HF, Ollama and xAI recorded by the builder (Tested with sample data)
 - MCP server (tools by key type, start task, approval refused) (Tested with sample data)
 - Results page (cost, hours freed from user-entered baselines, CSV) (Tested with sample data)
-- Helpers per AI: state (working/waiting/stalled/idle), job props, 4 monitor scenes (code, bird, space, maze) (Tested with sample data)
-- Click-to-choose a helper + 5-second 'on stage' preview (Tested with sample data)
+- On-screen agent per AI: state (working/waiting/stalled/idle), job props, 4 monitor scenes (code, bird, space, maze) (Tested with sample data)
+- Click-to-choose an agent + 5-second 'on stage' preview (Tested with sample data)
 - Done celebration (Tested with sample data)
 - .deb installer (Tested with sample data)
 - Results by P&L line, with a worked calculation for every money number (Lane 1b) (Tested with sample data)
@@ -42,19 +42,20 @@ Every number on the product page names the file it came from. The lists below ar
 
 ## What changed
 
+- 2026-11-11: Merged into the product: an automated test was changed so it no longer fails when it runs between 00:00 and 09:00 UTC, and a script and a log that show it passing at two times of day were added. The change touches test, script and log files only; this scorecard round did not run them, so no feature label or score changed (PR #136). No scorecard row covers this test fixture (not scored); the feature rows are unchanged.
+- 2026-11-11: Merged into the product: settings for spending limits, rules and safety checks, and a page for checking a saved record, plus the automated checks that today's test results come from. This scorecard round did not run them as a user would, so no feature label or score changed (PRs #142 and #137).
 - 2026-11-10: Land PR #132 merged into main as ebc7730 (67 lane PRs included); no feature label changed this round. Tagged v0.5.0 at ebc7730.
 - 2026-11-08: Re-scored 70/100 on our own rubric (was 76 on the old held rule). The 25 feature points are split over 13 features: one proven by a logged test run (the cut-off warning, PR #9, checked with a stand-in AI, not a real AI answer), ten built and tested with sample data, two not built or not tested yet. Tagged v0.4.0 at main dfaae6c.
 - 2026-11-08: Hosted CI now runs on the owner's self-hosted runner (PR #123). The README matches the recorded real runs (PR #10, release v0.3.0); notes-only pull requests #24 and #33 changed no code.
 - 2026-11-07: The Needs you card now warns when the AI's answer stopped at its length limit, and a CSV, JSON or text answer is saved without the code fence around it. Tested with a stand-in AI, not with a real AI answer. Release v0.3.0.
-- 2026-11-07: The README now matches the recorded real AI runs (release v0.3.0). The demo video's 1:04 to 1:17 section shows the older behaviour and has not been re-recorded.
 
 See [CHANGELOG](CHANGELOG.md).
 
 ## Demo
 
-[Demo video (3:45) on the product page](https://shipitworks.com/yield/) · [Transcript](https://shipitworks.com/yield/transcript/)
+[Demo video (3:04) on the product page](https://shipitworks.com/yield/) · [Transcript](https://shipitworks.com/yield/transcript/)
 
-The demo voice is AI-generated (ElevenLabs, "Alice") and the demo shows made-up data. The video says so at the end.
+The demo voice is AI-generated (ElevenLabs, "Bella") and the demo shows made-up data. The video says so at the end.
 
 ## Source code
 
